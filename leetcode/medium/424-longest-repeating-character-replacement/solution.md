@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/longest-repeating-character-replacement/submissions/2143042952/
+- **URL:** https://leetcode.com/problems/longest-repeating-character-replacement/submissions/2143046183/
 - **Date:** 2026-09-15
 
 ## Solution
@@ -19,13 +19,12 @@ public:
         for(int r=0;r<s.size();r++){
             freq[s[r]-'A']++;
             maxfreq=max(maxfreq,freq[s[r]-'A']);
-            while((r-l+1)-maxfreq> k){
+            while((r-l+1)-maxfreq>k){
                 freq[s[l]-'A']--;
                 l++;
             }
             maxlen=max(maxlen,r-l+1);
         }
-        
         return maxlen;
     }
 };
